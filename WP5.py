@@ -18,6 +18,10 @@ def main():
             result = calculator.evaluate_rpn(expression)
             results.append(str(result))
 
+        with open(output_file, 'w') as f:
+            f.write('\n'.join(results))
+
+        print("Results written to", output_file)
 
     except FileNotFoundError:
         print("File not found:", input_file)
